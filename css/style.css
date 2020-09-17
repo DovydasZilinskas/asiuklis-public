@@ -1,5 +1,11 @@
 /** @format */
 .container {
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 500px) {
+  .container {
+    width: 60%;
+  }
 }
