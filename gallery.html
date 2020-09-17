@@ -10,7 +10,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/gallery.js" defer></script>
 </head>
 
 <body>
@@ -47,6 +47,16 @@
     <section>
         <div class="container">
             <h1 class="uk-heading-small uk-heading-divider">Gallery</h1>
+            <div uk-slideshow="animation: push">
+                <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+                    <ul class="uk-slideshow-items" id="slideshow"></ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+                        uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+                        uk-slideshow-item="next"></a>
+                </div>
+                <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+            </div>
         </div>
     </section>
 </body>
