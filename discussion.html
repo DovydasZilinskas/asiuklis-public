@@ -50,13 +50,14 @@
                 <fieldset class="uk-fieldset">
                     <legend class="uk-legend">Discussion</legend>
                     <div class="uk-margin">
-                        <input class="uk-input" type="text" placeholder="Name">
+                        <input class="uk-input" type="text" placeholder="Name" name="name" required>
                     </div>
                     <div class="uk-margin">
-                        <input class="uk-input" type="email" placeholder="Email">
+                        <input class="uk-input" type="email" placeholder="Email" name="email">
                     </div>
                     <div class="uk-margin">
-                        <textarea class="uk-textarea" rows="5" placeholder="Your comment goes here..."></textarea>
+                        <textarea class="uk-textarea" rows="5" name="comment" placeholder="Your comment goes here..."
+                            required></textarea>
                     </div>
                     <div class="uk-margin">
                         <button type="submit" class="uk-button uk-button-default">Comment</button>

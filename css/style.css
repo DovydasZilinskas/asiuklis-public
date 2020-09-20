@@ -9,6 +9,10 @@
   height: 96px;
 }
 
+textarea {
+  resize: none;
+}
+
 @media screen and (min-width: 800px) {
   .container {
     width: 60%;
