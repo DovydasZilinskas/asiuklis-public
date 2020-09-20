@@ -46,25 +46,48 @@
 
     <section class="uk-section">
         <div class="container">
-            <form>
-                <fieldset class="uk-fieldset">
-                    <legend class="uk-legend">Discussion</legend>
-                    <div class="uk-margin">
-                        <input class="uk-input" type="text" placeholder="Name" name="name" required>
-                    </div>
-                    <div class="uk-margin">
-                        <input class="uk-input" type="email" placeholder="Email" name="email">
-                    </div>
-                    <div class="uk-margin">
-                        <textarea class="uk-textarea" rows="5" name="comment" placeholder="Your comment goes here..."
-                            required></textarea>
-                    </div>
-                    <div class="uk-margin">
-                        <button type="submit" class="uk-button uk-button-default">Comment</button>
-                    </div>
-                </fieldset>
-            </form>
+            <div uk-grid>
+                <div class="uk-width-small@m">
+
+                    <ul class="uk-nav uk-nav-default"
+                        uk-switcher="connect: #component-nav; animation: uk-animation-fade">
+                        <li><a href="#">Write</a></li>
+                        <li><a href="#">View</a></li>
+                        <li><a href="#">Edit</a></li>
+                    </ul>
+
+                </div>
+                <div class="uk-width-expand@m">
+
+                    <ul id="component-nav" class="uk-switcher">
+                        <li>
+                            <form>
+                                <fieldset class="uk-fieldset">
+                                    <legend class="uk-legend">Discussion</legend>
+                                    <div class="uk-margin">
+                                        <input class="uk-input" type="text" placeholder="Name" name="name" required>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <input class="uk-input" type="email" placeholder="Email" name="email">
+                                    </div>
+                                    <div class="uk-margin">
+                                        <textarea class="uk-textarea" rows="5" name="comment"
+                                            placeholder="Your comment goes here..." required></textarea>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <button type="submit" class="uk-button uk-button-default">Comment</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </li>
+                        <li id="comments"></li>
+                        <li>menu3</li>
+                    </ul>
+
+                </div>
+            </div>
         </div>
+
     </section>
 </body>
 
