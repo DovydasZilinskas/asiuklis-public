@@ -10,7 +10,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="js/discussion.js" defer></script>
 </head>
 
 <body>
@@ -46,10 +46,23 @@
 
     <section class="uk-section">
         <div class="container">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem possimus ratione, laboriosam,
-            fugiat reprehenderit doloremque dolorem earum quo veritatis molestiae deleniti sunt porro alias distinctio
-            non
-            ipsum necessitatibus eligendi.
+            <form>
+                <fieldset class="uk-fieldset">
+                    <legend class="uk-legend">Discussion</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Name">
+                    </div>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="email" placeholder="Email">
+                    </div>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" rows="5" placeholder="Your comment goes here..."></textarea>
+                    </div>
+                    <div class="uk-margin">
+                        <button type="submit" class="uk-button uk-button-default">Comment</button>
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </section>
 </body>
