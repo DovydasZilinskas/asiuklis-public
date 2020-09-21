@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js" defer></script>
+    <script src="js/discussion.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="uk-navbar uk-navbar-container uk-margin">
+            <div class="container">
+                <div class="uk-navbar-left uk-flex-between">
+                    <a class="uk-navbar-item uk-logo" href="#">asiuklis</a>
+                    <a class="uk-navbar-toggle" href="#">
+                        <span uk-icon="menu"></span>
+                    </a>
+                    <div uk-dropdown="animation: uk-animation-slide-top-small; duration: 1000">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li><a href="index.html">Home</a></li>
+                            <li class="uk-nav-header"></li>
+                            <li><a href="music.html">Music</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="discussion.html">Discussion</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="mailto:dodefke@gmail.com">Contact</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <form>
+                <fieldset class="uk-fieldset">
+                    <legend class="uk-legend">Edit your comment</legend>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="text" placeholder="Name" name="name" required>
+                    </div>
+                    <div class="uk-margin">
+                        <input class="uk-input" type="email" placeholder="Email" name="email">
+                    </div>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" rows="5" name="comment" placeholder="Your comment goes here..."
+                            required></textarea>
+                    </div>
+                    <div class="uk-margin">
+                        <button type="submit" class="uk-button uk-button-default">Comment</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+    </section>
+</body>
+
+</html>

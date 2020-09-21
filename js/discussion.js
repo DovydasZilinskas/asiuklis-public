@@ -7,13 +7,7 @@ document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
   const name = e.target.elements.name.value;
   const email = e.target.elements.email.value;
-
-  const person = {
-    name: name,
-    email: email,
-  };
-
-  window.localStorage.setItem("user", JSON.stringify(person));
+  const comment = e.target.elements.comment.value;
 
   fetch(url + "/discussions/", {
     method: "POST",
@@ -23,11 +17,12 @@ document.forms[0].addEventListener("submit", (e) => {
     body: JSON.stringify({
       Name: name,
       Email: email,
-      Text: e.target.elements.comment.value,
+      Text: comment,
     }),
   });
 });
 
+// Create comment
 fetch(url + "/discussions")
   .then((res) => res.json())
   .then((data) => {
@@ -43,8 +38,8 @@ fetch(url + "/discussions")
             <div class="uk-width-expand">
                 <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${e.Name}</a></h4>
                 <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                    <li><a href="#">${date}</a></li>
-                    <li><a href="#">Reply</a></li>
+                    <li>${date}</li>
+                    <li><a href="edit.html">Edit</a></li>
                 </ul>
             </div>
         </div>
