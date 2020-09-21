@@ -26,15 +26,20 @@ fetch(url + "/galleries/")
       const div2 = document.createElement("div");
       const a = document.createElement("a");
       const a2 = document.createElement("a");
-      li.className = "uk-active";
+
       ul.className = "uk-slideshow-items";
+
       div.className = "uk-position-relative uk-visible-toggle uk-light";
+
       div.setAttribute("tabindex", "-1");
+
       div2.setAttribute("uk-slideshow", "animation: push");
+
       a.className = "uk-position-center-left uk-position-small uk-hidden-hover";
       a.setAttribute("uk-slidenav-previous", "");
       a.setAttribute("uk-slideshow-item", "previous");
       a.href = "#";
+
       a2.className =
         "uk-position-center-right uk-position-small uk-hidden-hover";
       a2.setAttribute("uk-slidenav-next", "");
@@ -54,3 +59,4 @@ fetch(url + "/galleries/")
       div.append(ul, a, a2);
     });
   });
+document.querySelector("li:first-child").classList.add("uk-active");

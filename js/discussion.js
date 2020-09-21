@@ -5,6 +5,15 @@ const comments = document.getElementById("comments");
 
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
+  const name = e.target.elements.name.value;
+  const email = e.target.elements.email.value;
+
+  const person = {
+    name: name,
+    email: email,
+  };
+
+  window.localStorage.setItem("user", JSON.stringify(person));
 
   fetch(url + "/discussions/", {
     method: "POST",
@@ -12,8 +21,8 @@ document.forms[0].addEventListener("submit", (e) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      Name: e.target.elements.name.value,
-      Email: e.target.elements.email.value,
+      Name: name,
+      Email: email,
       Text: e.target.elements.comment.value,
     }),
   });
@@ -23,7 +32,6 @@ fetch(url + "/discussions")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((e) => {
-      console.log(e);
       const date = e.created_at.slice(0, 10);
       comments.innerHTML += `
       <article class="uk-comment">
