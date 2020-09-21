@@ -58,5 +58,7 @@ fetch(url + "/galleries/")
       div2.append(div);
       div.append(ul, a, a2);
     });
+  })
+  .then(() => {
+    document.querySelector(".uk-switcher li").classList.add("uk-active");
   });
-document.querySelector("li:first-child").classList.add("uk-active");
