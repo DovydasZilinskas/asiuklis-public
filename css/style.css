@@ -13,6 +13,11 @@ textarea {
   resize: none;
 }
 
+.about img {
+  float: left;
+  width: 300px;
+}
+
 @media screen and (min-width: 800px) {
   .container {
     width: 60%;
