@@ -6,23 +6,42 @@ const comments = document.getElementById("comments");
 // POST a comment to DB
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("hello");
 
   const name = e.target.elements.name.value;
   const email = e.target.elements.email.value;
   const comment = e.target.elements.comment.value;
 
-  fetch(url + "/discussions/", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      Name: name,
-      Email: email,
-      Text: comment,
-    }),
-  });
+  if (name.match(/^[A-z ,.'-]+$/i)) {
+    fetch(url + "/discussions/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Name: name,
+        Email: email,
+        Text: comment,
+      }),
+    })
+      .then((data) => data.json())
+      .then(() => {
+        UIkit.notification("Successfuly added", {
+          status: "success",
+          pos: "bottom-center",
+        });
+      })
+      .catch(() => {
+        UIkit.notification("Server error", {
+          status: "danger",
+          pos: "bottom-center",
+        });
+      });
+  } else {
+    UIkit.notification("Incorrect name", {
+      status: "danger",
+      pos: "bottom-center",
+    });
+  }
 });
 
 // Create comment article
@@ -42,7 +61,6 @@ fetch(url + "/discussions")
                 <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${e.Name}</a></h4>
                 <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                     <li>${date}</li>
-                    <li><a href="#">Reply</a></li>
                 </ul>
             </div>
         </div>
@@ -54,4 +72,7 @@ fetch(url + "/discussions")
 </article>
       `;
     });
+  })
+  .catch((error) => {
+    UIkit.notification(error, { status: "danger", pos: "bottom-center" });
   });
