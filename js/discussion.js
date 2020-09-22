@@ -32,7 +32,7 @@ document.forms[0].addEventListener("submit", (e) => {
         });
       })
       .catch(() => {
-        UIkit.notification("Server error", {
+        UIkit.notification("Server error!", {
           status: "danger",
           pos: "bottom-center",
         });
@@ -74,6 +74,9 @@ fetch(url + "/discussions")
       `;
     });
   })
-  .catch((error) => {
-    UIkit.notification(error, { status: "danger", pos: "bottom-center" });
+  .catch(() => {
+    UIkit.notification("Server error!", {
+      status: "danger",
+      pos: "bottom-center",
+    });
   });

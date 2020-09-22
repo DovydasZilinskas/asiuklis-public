@@ -20,6 +20,7 @@ fetch(url + "/galleries/")
   .then((res) => res.json())
   .then((data) => {
     data.forEach((item) => {
+      // Creating component tags
       const li = document.createElement("li");
       const ul = document.createElement("ul");
       const div = document.createElement("div");
@@ -27,6 +28,7 @@ fetch(url + "/galleries/")
       const a = document.createElement("a");
       const a2 = document.createElement("a");
 
+      // Giving tag attributes
       ul.className = "uk-slideshow-items";
 
       div.className = "uk-position-relative uk-visible-toggle uk-light";
@@ -46,6 +48,7 @@ fetch(url + "/galleries/")
       a2.setAttribute("uk-slideshow-item", "next");
       a2.href = "#";
 
+      // Looping through image url's
       item.Image.forEach((x) => {
         const li3 = document.createElement("li");
         const img = document.createElement("img");
@@ -61,4 +64,10 @@ fetch(url + "/galleries/")
   })
   .then(() => {
     document.querySelector(".uk-switcher li").classList.add("uk-active");
+  })
+  .catch(() => {
+    UIkit.notification("Server error!", {
+      status: "danger",
+      pos: "bottom-center",
+    });
   });
