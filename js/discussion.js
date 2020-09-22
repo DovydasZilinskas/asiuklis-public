@@ -11,6 +11,7 @@ document.forms[0].addEventListener("submit", (e) => {
   const email = e.target.elements.email.value;
   const comment = e.target.elements.comment.value;
 
+  // Input field "Name" validation and error handling
   if (name.match(/^[A-z ,.'-]+$/i)) {
     fetch(url + "/discussions/", {
       method: "POST",
