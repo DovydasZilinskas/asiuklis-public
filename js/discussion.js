@@ -3,6 +3,7 @@
 const url = "http://localhost:1337";
 const comments = document.getElementById("comments");
 
+// POST a comment to DB
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
   const name = e.target.elements.name.value;
@@ -22,7 +23,7 @@ document.forms[0].addEventListener("submit", (e) => {
   });
 });
 
-// Create comment
+// Create comment article
 fetch(url + "/discussions")
   .then((res) => res.json())
   .then((data) => {
@@ -39,7 +40,7 @@ fetch(url + "/discussions")
                 <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${e.Name}</a></h4>
                 <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                     <li>${date}</li>
-                    <li><a href="edit.html">Edit</a></li>
+                    <li><a href="#" id="edit" uk-switcher-item="2" value="${e.id}">Edit</a></li>
                 </ul>
             </div>
         </div>
