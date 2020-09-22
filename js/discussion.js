@@ -6,11 +6,37 @@ const comments = document.getElementById("comments");
 // POST a comment to DB
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
+  console.log("hello");
+
   const name = e.target.elements.name.value;
   const email = e.target.elements.email.value;
   const comment = e.target.elements.comment.value;
 
   fetch(url + "/discussions/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      Name: name,
+      Email: email,
+      Text: comment,
+    }),
+  });
+});
+
+// Post a reply to DB
+console.log(document.forms[1]);
+
+document.forms[1].addEventListener("submit", (i) => {
+  i.preventDefault();
+  console.log(i);
+
+  const name = i.target.elements.name2.value;
+  const email = i.target.elements.email2.value;
+  const comment = i.target.elements.comment2.value;
+
+  fetch(url + "/replies/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -40,7 +66,7 @@ fetch(url + "/discussions")
                 <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${e.Name}</a></h4>
                 <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                     <li>${date}</li>
-                    <li><a href="#" id="edit" uk-switcher-item="2" value="${e.id}">Edit</a></li>
+                    <li><a href="#" type="button" uk-toggle="target: #toggle-animation; animation: uk-animation-fade">Reply</a></li>
                 </ul>
             </div>
         </div>
