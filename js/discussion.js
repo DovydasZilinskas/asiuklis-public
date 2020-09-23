@@ -17,7 +17,7 @@ function addComment(data) {
                 <div class="uk-width-expand">
                   <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${e.Name}</a></h4>
                   <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                    <li>${date}</li>
+                    <li id="userid" value="${e.id}">${date}</li>
                   </ul>
                 </div>
             </div>
@@ -46,10 +46,10 @@ function fetchData() {
     });
 }
 
-// Call fetch to view comments
+// Call fetch function to view comments
 fetchData();
 
-// POST a comment to DB
+// POST a comment to DB on submit
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
 
