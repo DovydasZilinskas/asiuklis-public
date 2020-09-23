@@ -31,8 +31,8 @@ function addComment(data) {
   });
 }
 
+// Fetch data for creating a comment
 function fetchData() {
-  // Fetch data for creating a comment
   fetch(url + "/discussions")
     .then((res) => res.json())
     .then((data) => {
@@ -45,7 +45,10 @@ function fetchData() {
       });
     });
 }
+
+// Call fetch to view comments
 fetchData();
+
 // POST a comment to DB
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
