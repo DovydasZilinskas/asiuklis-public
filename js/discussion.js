@@ -3,6 +3,30 @@
 const url = "http://localhost:1337";
 const comments = document.getElementById("comments");
 
+// Function for deleting a comment
+function deleteComment() {
+  document.querySelectorAll("button.userid").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      const article =
+        e.target.parentElement.parentElement.parentElement.parentElement
+          .parentElement.parentElement;
+      const id = e.target.value;
+      fetch(url + "/discussions/" + id, {
+        method: "DELETE",
+      })
+        .then(() => {
+          comments.removeChild(article);
+        })
+        .catch(() => {
+          UIkit.notification("Server error!", {
+            status: "danger",
+            pos: "bottom-center",
+          });
+        });
+    });
+  });
+}
+
 // Function for creating a comment
 function addComment(data) {
   data.forEach((e) => {
@@ -17,7 +41,8 @@ function addComment(data) {
                 <div class="uk-width-expand">
                   <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${e.Name}</a></h4>
                   <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
-                    <li id="userid" value="${e.id}">${date}</li>
+                    <li>${date}</li>
+                    <li><button class="userid" value="${e.id}">Delete</button></li>
                   </ul>
                 </div>
             </div>
@@ -29,6 +54,7 @@ function addComment(data) {
         </article>
     `;
   });
+  deleteComment();
 }
 
 // Fetch data for creating a comment
