@@ -76,6 +76,7 @@ document.forms[0].addEventListener("submit", (e) => {
         });
       })
       .then(() => fetchData())
+      .then(() => document.forms[0].reset())
       .catch(() => {
         UIkit.notification("Server error!", {
           status: "danger",
