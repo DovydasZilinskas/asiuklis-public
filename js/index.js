@@ -1,9 +1,7 @@
 /** @format */
 
-const header = document.querySelector(".header");
-
 // Insert navbar into header
-header.innerHTML = `
+document.querySelector(".header").innerHTML = `
     <div class="header">
         <nav class="uk-navbar-container" uk-navbar>
             <div class="container">
@@ -21,7 +19,7 @@ header.innerHTML = `
                         </li>
                         <li><a href="discussion.html">Community</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="mailto:dodefke@gmail.com">Contact</a></li>
+                        <li><a href="#" class="contact">Contact</a></li>
                         <a class="uk-navbar-toggle" href="index.html">
                             <span uk-icon="icon: home; ratio: 1.4"></span>
                         </a>
@@ -31,3 +29,9 @@ header.innerHTML = `
         </nav>
     </div>
 `;
+
+// Alert HTML 'mailto' link
+document.querySelector("a.contact").addEventListener("click", () => {
+  const conf = confirm("Do you want to send an email?");
+  if (conf == true) window.location.href = "mailto:dodefke@gmail.com";
+});
