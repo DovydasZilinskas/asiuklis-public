@@ -36,8 +36,8 @@ function deleteComment() {
 
 // Function for creating a comment
 function addComment(data) {
-  data.forEach((e) => {
-    const date = e.created_at.slice(0, 10);
+  data.forEach((i) => {
+    const date = i.created_at.slice(0, 10);
     comments.innerHTML += `
         <article class="uk-comment">
           <header class="uk-comment-header">
@@ -46,16 +46,16 @@ function addComment(data) {
                   <span uk-icon="icon: user; ratio: 2"></span>
                 </div>
                 <div class="uk-width-expand">
-                  <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${e.Name}</a></h4>
+                  <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${i.Name}</a></h4>
                   <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                     <li>${date}</li>
-                    <li><button class="userid" value="${e.id}">Delete</button></li>
+                    <li><button class="userid" value="${i.id}">Delete</button></li>
                   </ul>
                 </div>
             </div>
           </header>
             <div class="uk-comment-body">
-              <p>${e.Text}</p>
+              <p>${i.Text}</p>
             </div>
             <hr class="uk-divider-small">
         </article>
@@ -87,9 +87,9 @@ document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
 
   const body = {
-    Name: e.target.elements.name.value,
-    Email: e.target.elements.email.value,
-    Text: e.target.elements.comment.value,
+    Name: e.target.name.value,
+    Email: e.target.email.value,
+    Text: e.target.comment.value,
   };
 
   // Input field "Name" validation and error handling
@@ -102,13 +102,15 @@ document.forms[0].addEventListener("submit", (e) => {
       body: JSON.stringify(body),
     })
       .then((data) => data.json())
+      .then((res) => {
+        addComment([res]);
+      })
       .then(() => {
         UIkit.notification("Successfuly added", {
           status: "success",
           pos: "bottom-center",
         });
       })
-      .then(() => fetchData())
       .then(() => document.forms[0].reset())
       .catch(() => {
         UIkit.notification("Server error!", {
