@@ -16,30 +16,31 @@
 <body>
 
     <header>
-        <nav class="uk-navbar uk-navbar-container uk-margin">
-            <div class="container">
-                <div class="uk-navbar-left uk-flex-between">
-                    <a class="uk-navbar-item uk-logo" href="index.html">asiuklis</a>
-                    <a class="uk-navbar-toggle" href="#">
-                        <span uk-icon="icon: menu; ratio: 2"></span>
-                    </a>
-                    <div uk-dropdown>
-                        <ul class="uk-nav uk-dropdown-nav">
-                            <li><a href="index.html">Home</a></li>
-                            <li class="uk-nav-header"></li>
-                            <li><a href="music.html">Music</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li class="uk-nav-divider"></li>
+        <div class="header">
+            <nav class="uk-navbar-container" uk-navbar>
+                <div class="container">
+                    <div class="uk-navbar-right uk-flex-between">
+                        <a class="uk-navbar-item uk-logo" href="index.html">asiuklis</a>
+                        <ul class="uk-navbar-nav">
+                            <li>
+                                <a href="#">Projects</a>
+                                <div class="uk-navbar-dropdown">
+                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                        <li><a href="music.html">Music</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+                                    </ul>
+                                </div>
+                            </li>
                             <li><a href="discussion.html">Community</a></li>
-                            <li class="uk-nav-divider"></li>
                             <li><a href="about.html">About</a></li>
                             <li><a href="mailto:dodefke@gmail.com">Contact</a></li>
+                            <a class="uk-navbar-toggle" href="index.html">
+                                <span uk-icon="icon: home; ratio: 1.4"></span>
+                            </a>
                         </ul>
                     </div>
-
                 </div>
-            </div>
-        </nav>
+            </nav>
         </div>
     </header>
 
@@ -56,6 +57,7 @@
         </ul>
         </div>
     </section>
+
 </body>
 
 </html>

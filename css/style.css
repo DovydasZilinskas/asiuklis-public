@@ -18,7 +18,7 @@ textarea {
   width: 300px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .container {
     width: 60%;
   }
