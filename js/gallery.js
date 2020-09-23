@@ -27,9 +27,12 @@ fetch(url + "/galleries/")
       const div2 = document.createElement("div");
       const a = document.createElement("a");
       const a2 = document.createElement("a");
+      const ul2 = document.createElement("ul");
 
       // Giving tag attributes
       ul.className = "uk-slideshow-items";
+
+      ul2.className = "uk-slideshow-nav uk-dotnav uk-flex-center uk-margin";
 
       div.className = "uk-position-relative uk-visible-toggle uk-light";
 
@@ -58,7 +61,7 @@ fetch(url + "/galleries/")
       });
       switcher.append(li);
       li.append(div2);
-      div2.append(div);
+      div2.append(div, ul2);
       div.append(ul, a, a2);
     });
   })
