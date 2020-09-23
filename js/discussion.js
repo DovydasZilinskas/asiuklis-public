@@ -14,6 +14,13 @@ function deleteComment() {
       fetch(url + "/discussions/" + id, {
         method: "DELETE",
       })
+        .then((data) => data.json())
+        .then(() => {
+          UIkit.notification("Successfuly deleted", {
+            status: "success",
+            pos: "bottom-center",
+          });
+        })
         .then(() => {
           comments.removeChild(article);
         })
