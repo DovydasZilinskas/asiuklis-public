@@ -71,7 +71,7 @@ function addComment(data) {
   deleteComment();
 }
 
-// Firebase authentication state viewer
+// Firebase authentication state viewer to display or hide page elements
 function displayNone() {
   const el = document.getElementById("lilogin");
   const all = document.getElementsByClassName("userid");
@@ -187,14 +187,16 @@ document.forms.login.addEventListener("submit", (f) => {
         });
         document.forms.login.reset();
       },
+      () => {
+        displayNone();
+      },
       (error) => {
         UIkit.notification(error.message, {
           status: "danger",
           pos: "bottom-center",
         });
       }
-    )
-    .then(() => displayNone());
+    );
 });
 
 // Firebase register
@@ -214,6 +216,9 @@ document.forms.register.addEventListener("submit", (g) => {
           pos: "bottom-center",
         });
         document.forms.register.reset();
+      },
+      () => {
+        displayNone();
       },
       (error) => {
         UIkit.notification(error.message, {
