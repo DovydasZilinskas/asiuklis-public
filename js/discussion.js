@@ -133,7 +133,7 @@ document.forms.login.addEventListener("submit", (f) => {
     .signInWithEmailAndPassword(email, password)
     .then(
       () => {
-        UIkit.notification("Successfuly logged in", {
+        UIkit.notification("Successfuly signed in", {
           status: "success",
           pos: "bottom-center",
         });
@@ -145,7 +145,8 @@ document.forms.login.addEventListener("submit", (f) => {
           pos: "bottom-center",
         });
       }
-    );
+    )
+    .then(() => displayNone());
 });
 
 // Firebase register
@@ -174,3 +175,19 @@ document.forms.register.addEventListener("submit", (g) => {
       }
     );
 });
+
+// Firebuse authentication state viewer
+function displayNone() {
+  const el = document.getElementById("lilogin");
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      el.innerHTML = `
+      <a href="#" id="fbsignout">Signout</a>
+      `;
+    } else {
+      console.log("No user is signed in.");
+    }
+  });
+}
+
+displayNone();
