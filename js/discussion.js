@@ -64,6 +64,44 @@ function addComment(data) {
   deleteComment();
 }
 
+// Firebase authentication state viewer
+function displayNone() {
+  const el = document.getElementById("lilogin");
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      el.innerHTML = `
+      <a href="#" id="fbsignout" onclick="signoutUser()">Signout</a>
+      `;
+    } else {
+      el.innerHTML = `
+      <a href="#">Login</a>
+      `;
+    }
+  });
+}
+displayNone();
+
+// Firebase signout function
+function signoutUser() {
+  firebase
+    .auth()
+    .signOut()
+    .then(
+      () => {
+        UIkit.notification("Successfuly registered", {
+          status: "success",
+          pos: "bottom-center",
+        });
+      },
+      (error) => {
+        UIkit.notification(error.message, {
+          status: "danger",
+          pos: "bottom-center",
+        });
+      }
+    );
+}
+
 // Fetch data for creating a comment
 fetch(url + "/discussions")
   .then((res) => res.json())
@@ -175,19 +213,3 @@ document.forms.register.addEventListener("submit", (g) => {
       }
     );
 });
-
-// Firebuse authentication state viewer
-function displayNone() {
-  const el = document.getElementById("lilogin");
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      el.innerHTML = `
-      <a href="#" id="fbsignout">Signout</a>
-      `;
-    } else {
-      console.log("No user is signed in.");
-    }
-  });
-}
-
-displayNone();
