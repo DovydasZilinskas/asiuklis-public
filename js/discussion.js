@@ -25,10 +25,17 @@ function deleteComment() {
           comments.removeChild(article);
         })
         .catch(() => {
-          UIkit.notification("Server error!", {
-            status: "danger",
-            pos: "bottom-center",
-          });
+          if (id == "") {
+            UIkit.notification("Please login to delete post", {
+              status: "warning",
+              pos: "bottom-center",
+            });
+          } else {
+            UIkit.notification("Server error!", {
+              status: "danger",
+              pos: "bottom-center",
+            });
+          }
         });
     });
   });
@@ -67,15 +74,18 @@ function addComment(data) {
 // Firebase authentication state viewer
 function displayNone() {
   const el = document.getElementById("lilogin");
+  const all = document.getElementsByClassName("userid");
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      el.innerHTML = `
-      <a href="#" id="fbsignout" onclick="signoutUser()">Signout</a>
-      `;
+      el.innerHTML = `<a href="#" id="fbsignout" onclick="signoutUser()">Signout</a>`;
+      for (let i = 0; i < all.length; i++) {
+        all[i].style.display = "block";
+      }
     } else {
-      el.innerHTML = `
-      <a href="#">Login</a>
-      `;
+      el.innerHTML = `<a href="#">Login</a>`;
+      for (let i = 0; i < all.length; i++) {
+        all[i].removeAttribute("value");
+      }
     }
   });
 }
