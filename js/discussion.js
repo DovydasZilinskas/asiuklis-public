@@ -65,22 +65,17 @@ function addComment(data) {
 }
 
 // Fetch data for creating a comment
-function fetchData() {
-  fetch(url + "/discussions")
-    .then((res) => res.json())
-    .then((data) => {
-      addComment(data);
-    })
-    .catch(() => {
-      UIkit.notification("Server error!", {
-        status: "danger",
-        pos: "bottom-center",
-      });
+fetch(url + "/discussions")
+  .then((res) => res.json())
+  .then((data) => {
+    addComment(data);
+  })
+  .catch(() => {
+    UIkit.notification("Server error!", {
+      status: "danger",
+      pos: "bottom-center",
     });
-}
-
-// Call fetch function to view comments
-fetchData();
+  });
 
 // POST a comment to DB on submit
 document.forms[0].addEventListener("submit", (e) => {

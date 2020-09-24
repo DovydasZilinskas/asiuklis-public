@@ -20,9 +20,7 @@ document.querySelector(".header").innerHTML = `
                         <li><a href="discussion.html">Community</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="#" class="contact">Contact</a></li>
-                        <a class="uk-navbar-toggle" href="index.html">
-                            <span uk-icon="icon: home; ratio: 1.4"></span>
-                        </a>
+                        <li><a href="index.html">Home</a></li>
                     </ul>
                 </div>
             </div>
