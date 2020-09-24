@@ -88,7 +88,7 @@ function signoutUser() {
     .signOut()
     .then(
       () => {
-        UIkit.notification("Successfuly registered", {
+        UIkit.notification("Successfuly signed out", {
           status: "success",
           pos: "bottom-center",
         });
