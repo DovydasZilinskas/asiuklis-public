@@ -49,7 +49,7 @@ function addComment(data) {
                   <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">${i.Name}</a></h4>
                   <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                     <li>${date}</li>
-                    <li><button class="userid" value="${i.id}">Delete</button></li>
+                    <li><button class="userid uk-button uk-button-default uk-button-small" value="${i.id}">Delete</button></li>
                   </ul>
                 </div>
             </div>
@@ -138,6 +138,33 @@ document.forms.login.addEventListener("submit", (f) => {
           pos: "bottom-center",
         });
         document.forms.login.reset();
+      },
+      (error) => {
+        UIkit.notification(error.message, {
+          status: "danger",
+          pos: "bottom-center",
+        });
+      }
+    );
+});
+
+// Firebase register
+document.forms.register.addEventListener("submit", (g) => {
+  g.preventDefault();
+
+  const email = g.target.elements.email.value;
+  const password = g.target.elements.password.value;
+
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .then(
+      () => {
+        UIkit.notification("Successfuly registered", {
+          status: "success",
+          pos: "bottom-center",
+        });
+        document.forms.register.reset();
       },
       (error) => {
         UIkit.notification(error.message, {
