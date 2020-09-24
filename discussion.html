@@ -33,6 +33,7 @@
                         uk-switcher="connect: #component-nav; animation: uk-animation-fade">
                         <li><a href="#">View</a></li>
                         <li><a href="#">Write</a></li>
+                        <li><a href="#">Login</a></li>
                     </ul>
 
                 </div>
@@ -61,6 +62,52 @@
                                     </div>
                                 </fieldset>
                             </form>
+                        </li>
+                        <li>
+                            <div class="uk-grid">
+                                <div>
+                                    <form name="login">
+                                        <legend class="uk-legend">Login</legend>
+                                        <div class="uk-margin">
+                                            <div class="uk-inline">
+                                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                                <input class="uk-input" type="email" placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="uk-margin">
+                                            <div class="uk-inline">
+                                                <span class="uk-form-icon uk-form-icon-flip"
+                                                    uk-icon="icon: lock"></span>
+                                                <input class="uk-input" type="text" placeholder="Password" required>
+                                            </div>
+                                        </div>
+                                        <button class="uk-button uk-button-default uk-button-small"
+                                            type="submit">Login</button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <form name="register">
+                                        <legend class="uk-legend">Register</legend>
+                                        <div class="uk-margin">
+                                            <div class="uk-inline">
+                                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                                <input class="uk-input" type="email" placeholder="Email" required>
+                                            </div>
+                                        </div>
+                                        <div class="uk-margin">
+                                            <div class="uk-inline">
+                                                <span class="uk-form-icon uk-form-icon-flip"
+                                                    uk-icon="icon: lock"></span>
+                                                <input class="uk-input" type="text" placeholder="Password" required>
+                                            </div>
+                                        </div>
+                                        <button class="uk-button uk-button-default uk-button-small"
+                                            type="submit">Register</button>
+                                    </form>
+                                </div>
+                            </div>
+
+
                         </li>
                     </ul>
                 </div>
