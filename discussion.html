@@ -10,9 +10,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js" defer></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-auth.js"></script>
     <script src="js/auth.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="js/discussion.js" defer></script>
     <script src="js/index.js" defer></script>
 
@@ -73,14 +74,16 @@
                                         <div class="uk-margin">
                                             <div class="uk-inline">
                                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                                <input class="uk-input" type="email" placeholder="Email" required>
+                                                <input class="uk-input" type="email" name="email" placeholder="Email"
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="uk-margin">
                                             <div class="uk-inline">
                                                 <span class="uk-form-icon uk-form-icon-flip"
                                                     uk-icon="icon: lock"></span>
-                                                <input class="uk-input" type="text" placeholder="Password" required>
+                                                <input class="uk-input" type="password" name="password"
+                                                    placeholder="Password" required>
                                             </div>
                                         </div>
                                         <button class="uk-button uk-button-default uk-button-small"
@@ -93,14 +96,16 @@
                                         <div class="uk-margin">
                                             <div class="uk-inline">
                                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                                <input class="uk-input" type="email" placeholder="Email" required>
+                                                <input class="uk-input" type="email" name="email" placeholder="Email"
+                                                    required>
                                             </div>
                                         </div>
                                         <div class="uk-margin">
                                             <div class="uk-inline">
                                                 <span class="uk-form-icon uk-form-icon-flip"
                                                     uk-icon="icon: lock"></span>
-                                                <input class="uk-input" type="text" placeholder="Password" required>
+                                                <input class="uk-input" type="password" name="password"
+                                                    placeholder="Password" required>
                                             </div>
                                         </div>
                                         <button class="uk-button uk-button-default uk-button-small"

@@ -120,3 +120,30 @@ document.forms[0].addEventListener("submit", (e) => {
     });
   }
 });
+
+// Firebase login
+document.forms.login.addEventListener("submit", (f) => {
+  f.preventDefault();
+
+  const email = f.target.elements.email.value;
+  const password = f.target.elements.password.value;
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .then(
+      () => {
+        UIkit.notification("Successfuly logged in", {
+          status: "success",
+          pos: "bottom-center",
+        });
+      },
+      (error) => {
+        UIkit.notification(error.message, {
+          status: "danger",
+          pos: "bottom-center",
+        });
+      }
+    )
+    .then(() => document.forms.login.reset());
+});
