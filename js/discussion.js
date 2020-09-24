@@ -137,6 +137,7 @@ document.forms.login.addEventListener("submit", (f) => {
           status: "success",
           pos: "bottom-center",
         });
+        document.forms.login.reset();
       },
       (error) => {
         UIkit.notification(error.message, {
@@ -144,6 +145,5 @@ document.forms.login.addEventListener("submit", (f) => {
           pos: "bottom-center",
         });
       }
-    )
-    .then(() => document.forms.login.reset());
+    );
 });
