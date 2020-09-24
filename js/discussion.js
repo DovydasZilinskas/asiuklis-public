@@ -74,18 +74,18 @@ function addComment(data) {
 // Firebase authentication state viewer to display or hide page elements
 function displayNone() {
   const el = document.getElementById("lilogin");
-  const all = document.getElementsByClassName("userid");
+  // const all = document.getElementsByClassName("userid");
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       el.innerHTML = `<a href="#" id="fbsignout" onclick="signoutUser()">Signout</a>`;
-      for (let i = 0; i < all.length; i++) {
-        all[i].style.display = "block";
-      }
+      // for (let i = 0; i < all.length; i++) {
+      //   all[i].style.display = "block";
+      // }
     } else {
       el.innerHTML = `<a href="#">Login</a>`;
-      for (let i = 0; i < all.length; i++) {
-        all[i].removeAttribute("value");
-      }
+      // for (let i = 0; i < all.length; i++) {
+      //   all[i].removeAttribute("value");
+      // }
     }
   });
 }
@@ -186,6 +186,7 @@ document.forms.login.addEventListener("submit", (f) => {
           pos: "bottom-center",
         });
         document.forms.login.reset();
+        window.location.replace("discussion.html");
       },
       () => {
         displayNone();
