@@ -116,7 +116,7 @@ function signoutUser() {
 fetch(url + "/discussions")
   .then((res) => res.json())
   .then((data) => {
-    addComment(data);
+    addComment(data.reverse());
   })
   .catch(() => {
     UIkit.notification("Server error!", {
