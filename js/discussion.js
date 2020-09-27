@@ -77,7 +77,10 @@ function displayNone() {
   // const all = document.getElementsByClassName("userid");
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      el.innerHTML = `<a href="#" id="fbsignout" onclick="signoutUser()">Signout</a>`;
+      el.innerHTML = `<a href="#" id="fbsignout" onclick="signoutUser()">Signout <div>${user.email.substring(
+        0,
+        user.email.indexOf("@")
+      )}</div></a>`;
     } else {
       el.innerHTML = `<a href="#">Login</a>`;
       // for (let i = 0; i < all.length; i++) {
