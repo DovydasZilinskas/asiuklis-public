@@ -4,7 +4,7 @@
 document.querySelector(".header").innerHTML = `
     <div class="header">
         <nav class="uk-navbar-container" uk-navbar>
-            <div class="container">
+            <div class="container ">
                 <div class="uk-navbar-right uk-flex-between">
                     <a class="uk-navbar-item uk-logo" href="index.html">asiuklis</a>
                     <ul class="uk-navbar-nav">
@@ -17,10 +17,16 @@ document.querySelector(".header").innerHTML = `
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="discussion.html">Community</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#" class="contact">Contact</a></li>
-                        <li><a href="index.html">Home</a></li>
+                        <li>
+                        <a href="#">Parent</a>
+                            <div class="uk-navbar-dropdown">
+                                <ul class="uk-nav uk-navbar-dropdown-nav">
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="#" class="contact">Contact</a></li>
+                                    <li><a href="discussion.html">Community</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
