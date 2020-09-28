@@ -39,3 +39,9 @@ document.querySelector("a.contact").addEventListener("click", () => {
   const conf = confirm("Do you want to send an email?");
   if (conf == true) window.location.href = "mailto:dodefke@gmail.com";
 });
+
+document.querySelector(".footer").innerHTML = `
+<a href="https://github.com/DovydasZilinskas" target="_blank" uk-icon="icon: github"></a>
+<a href="https://www.instagram.com/asiuklis_tu/" target="_blank" uk-icon="icon: instagram"></a>
+<a href="https://soundcloud.com/asiuklis" target="_blank" uk-icon="icon: soundcloud"></a>
+`;
