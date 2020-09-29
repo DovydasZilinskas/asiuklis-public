@@ -10,7 +10,7 @@ document.querySelector(".header").innerHTML = `
                     <ul class="uk-navbar-nav">
                         <li>
                             <a href="#">Projects</a>
-                            <div class="uk-navbar-dropdown" uk-dropdown="offset: 0">
+                            <div class="uk-navbar-dropdown" uk-dropdown="offset: 0; pos: top-justify">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="music.html">Music</a></li>
                                     <li><a href="gallery.html">Gallery</a></li>
@@ -19,7 +19,7 @@ document.querySelector(".header").innerHTML = `
                         </li>
                         <li>
                         <a href="#">Parent</a>
-                            <div class="uk-navbar-dropdown" uk-dropdown="offset: 0">
+                            <div class="uk-navbar-dropdown" uk-dropdown="offset: 0; pos: top-justify">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="#" class="contact">Contact</a></li>
