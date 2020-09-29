@@ -1,6 +1,6 @@
 /** @format */
 
-const url = "http://localhost:1337";
+const url = "http://104.45.88.163:1337";
 const comments = document.getElementById("comments");
 
 // Function for deleting a comment

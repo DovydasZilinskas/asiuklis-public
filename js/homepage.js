@@ -2,7 +2,7 @@
 
 /** @format */
 
-const url = "http://localhost:1337";
+const url = "http://104.45.88.163:1337";
 const slideshow = document.querySelector(".slideshow");
 
 // Creating picture list and appending
