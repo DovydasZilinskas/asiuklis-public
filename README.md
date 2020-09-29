@@ -2,7 +2,7 @@
 
 # 'asiuklis' personal page
 
-Access [Web Page](https://asiuklis.net)
+Access [Web Page](http://13.74.253.59/)
 
 ## Content manager
 
@@ -10,7 +10,7 @@ Access [Web Page](https://asiuklis.net)
 Strapi
 ```
 
-See [Strapi configuration](https://asiuklis.net/admin)
+See [Strapi configuration](http://104.45.88.163:1337/admin)
 
 ### Authentication
 
