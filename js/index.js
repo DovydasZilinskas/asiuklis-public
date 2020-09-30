@@ -18,9 +18,10 @@ document.querySelector(".header").innerHTML = `
                             </div>
                         </li>
                         <li>
-                        <a href="#">Parent</a>
+                        <a href="#">Menu</a>
                             <div class="uk-navbar-dropdown" uk-dropdown="offset: 0; pos: top-justify">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="#" class="contact">Contact</a></li>
                                     <li><a href="discussion.html">Community</a></li>
