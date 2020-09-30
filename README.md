@@ -2,7 +2,7 @@
 
 # 'asiuklis' personal page
 
-Access [Web Page](http://13.74.253.59/)
+Access [Web Page](http://137.135.246.105/)
 
 ## Content manager
 
